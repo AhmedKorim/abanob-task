@@ -1,0 +1,11 @@
+'use strict';
+
+//var
+var $header = $('.carousel-item');
+
+var headerDim = function headerDim() {
+    $header.height(window.innerHeight);
+};
+
+headerDim();
+//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNjcmlwdHMuanMiXSwibmFtZXMiOlsiJGhlYWRlciIsIiQiLCJoZWFkZXJEaW0iLCJoZWlnaHQiLCJ3aW5kb3ciLCJpbm5lckhlaWdodCJdLCJtYXBwaW5ncyI6Ijs7QUFBQTtBQUNBLElBQU1BLFVBQVVDLEVBQUUsZ0JBQUYsQ0FBaEI7O0FBRUEsSUFBTUMsWUFBWSxTQUFaQSxTQUFZLEdBQU07QUFDcEJGLFlBQVFHLE1BQVIsQ0FBZUMsT0FBT0MsV0FBdEI7QUFDSCxDQUZEOztBQUlBSCIsImZpbGUiOiJzY3JpcHRzLmpzIiwic291cmNlc0NvbnRlbnQiOlsiLy92YXJcclxuY29uc3QgJGhlYWRlciA9ICQoJy5jYXJvdXNlbC1pdGVtJyk7XHJcblxyXG5jb25zdCBoZWFkZXJEaW0gPSAoKSA9PiB7XHJcbiAgICAkaGVhZGVyLmhlaWdodCh3aW5kb3cuaW5uZXJIZWlnaHQpXHJcbn07XHJcblxyXG5oZWFkZXJEaW0oKTtcclxuIl19
