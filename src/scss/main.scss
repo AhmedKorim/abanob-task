@@ -58,7 +58,7 @@ section {
 section {
   .row {
     margin: 0;
-    .col {
+     div[class^="col"]{
       @media (max-width: 768px) {
         padding: 0;
       }
@@ -98,7 +98,7 @@ section {
     left: -10%;
     z-index: 7;
     @media (max-width: 768px) {
-      width: 75%;
+      width: 50%;
       left: unset;
       position: relative;
       display: flex;
@@ -331,11 +331,15 @@ body {
   .col-md-2 {
     @extend %skew-holder;
   }
+
 }
 
 .legacy {
   .col-md-2 {
     @extend %skew-holder;
+  }
+  .img-fluid{
+    width: 100%;
   }
 }
 
