@@ -69,7 +69,10 @@ $grayColor: #f8f8f5;
 }
 
 %pt {
-
+  font-size: 12.5px;
+  margin-bottom: .5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .content {
@@ -87,6 +90,11 @@ section {
 section {
   .row {
     margin: 0;
+    .col-5, .col-md-5 {
+      > p {
+        @extend %pt;
+      }
+    }
     div[class^="col"] {
       padding: 0;
       @media (max-width: 768px) {
@@ -305,15 +313,24 @@ body {
   sections
 
 ----------------------------------*/
-.section-header {
-  @extend %heading;
-}
 
 .the-foundation {
   p {
     color: $darkColor;
     font-size: .9rem;
     margin-bottom: .5em;
+  }
+  .text-center {
+    > P {
+      @extend %pt;
+      padding-left: 3rem;
+      padding-right: 3rem;
+    }
+  }
+  .about {
+    .img-wrapper {
+      margin-right: 1rem;
+    }
   }
 }
 
@@ -336,17 +353,22 @@ body {
   }
   .map {
     position: relative;
-    //top: -10rem;
     > div {
       z-index: 6;
       position: absolute;
       width: 150%;
-      @media (max-width: 768px) {
+      top: -100%
+
+    }
+    @media (max-width: 768px) {
+      top: 0;
+      > div {
         position: static;
         width: 100%;
+        top: 0;
       }
-    }
 
+    }
   }
 }
 
@@ -382,7 +404,21 @@ body {
       display: none;
     }
   }
-
+  blockquote {
+    margin-top: 2rem;
+    p {
+      &::before {
+        content: "\f10d";
+        font-family: "FontAwesome" ;
+        color: $mainColor;
+        display: block;
+        margin-left: -2rem;
+        font-size: 1.5rem;
+      }
+      padding: 0 1rem;
+      color: $mainColor;
+    }
+  }
 }
 
 /*----------------------------------
@@ -408,6 +444,10 @@ footer {
       }
     }
   }
+}
+
+.section-header {
+  @extend %heading;
 }
 
 /*----------------------------------
