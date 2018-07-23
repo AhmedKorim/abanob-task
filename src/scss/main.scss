@@ -45,7 +45,9 @@ section {
   .row {
     margin: 0;
     .col {
-      padding: 0;
+      @media (max-width: 750px) {
+        padding: 0;
+      }
     }
   }
 }
@@ -74,7 +76,13 @@ section {
     position: absolute;
     width: 120%;
     left: -10%;
-    z-index: 10;
+    z-index: 7;
+    @media (max-width: 750px){
+      position: static;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
   }
 }
@@ -87,7 +95,7 @@ body {
   header
 ----------------------------------*/
 .header {
-  .main-header{
+  .main-header {
     position: fixed;
     top: 0;
     left: 0;
@@ -95,15 +103,15 @@ body {
     height: 80px;
     background-color: #fff;
     z-index: 10;
-    .brand{
+    .brand {
       margin-left: 1rem;
       padding: .3rem .2rem .2rem;
     }
-    .button{
-      margin-left:auto;
+    .button {
+      margin-left: auto;
       display: flex;
       align-items: center;
-      a{
+      a {
         display: block;
         margin-right: 1rem;
         padding: .3rem;
@@ -112,7 +120,7 @@ body {
         background-color: red;
       }
     }
-    &.hidden{
+    &.hidden {
       display: none;
 
     }
@@ -122,10 +130,10 @@ body {
     &.nano {
       position: absolute;
       left: -100%;
-      aside{
+      aside {
         transform: translate3d(100%, 0, 0);
         visibility: hidden;
-        &.active{
+        &.active {
           visibility: visible;
           transform: translate3d(200%, 0, 0);
 
@@ -258,27 +266,27 @@ body {
 }
 
 .geelong {
-  .col-2 {
+  .col-md-2 {
     @extend %skew-holder;
   }
 }
 
 .scholarship {
-  .col-2 {
+  .col-md-2 {
     @extend %skew-holder;
   }
 
 }
 
 .cultural {
-  .col-2 {
+  .col-md-2 {
     @extend %skew-holder;
   }
   .map {
     position: relative;
     top: -10rem;
     > div {
-      z-index: 15;
+      z-index: 6;
       position: absolute;
       width: 150%;
     }
@@ -286,29 +294,29 @@ body {
 }
 
 .sponsored {
-  .col-2 {
+  .col-md-2 {
     @extend %skew-holder;
   }
 
 }
 
 .viquque {
-  .col-2 {
+  .col-md-2 {
     @extend %skew-holder;
   }
 }
 
 .legacy {
-  .col-2 {
+  .col-md-2 {
     @extend %skew-holder;
   }
 }
 
 .support {
-  .col-2 {
+  .col-md-2 {
     @extend %skew-holder;
   }
-  .col-2 {
+  .col-md-2 {
     div:last-of-type {
       display: none;
     }
