@@ -351,13 +351,16 @@ body {
   .col-md-2 {
     @extend %skew-holder;
   }
+  .row {
+    height: 400px;
+  }
   .map {
     position: relative;
     > div {
       z-index: 6;
       position: absolute;
       width: 150%;
-      top: calc(-50% - 1rem)
+      top: calc(-20% - 4rem)
 
     }
     @media (max-width: 768px) {

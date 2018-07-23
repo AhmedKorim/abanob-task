@@ -30,17 +30,17 @@
         };
         borderAdjust();
         // the cultural
-        const mapAdjustion = () => {
-            if (window.innerWidth > 765) {
-                $culturalSecion.height(Math.min(200 + $(".cultural .map img").height(), 400));
-            } else {
-                $culturalSecion.height("auto");
-            }
-            borderAdjust();
-        };
+        // const mapAdjustion = () => {
+        //     if (window.innerWidth > 765) {
+        //         $culturalSecion.height(Math.min(200 + $(".cultural .map img").height(), 400));
+        //     } else {
+        //         $culturalSecion.height("auto");
+        //     }
+        //     borderAdjust();
+        // };
 
         const switchSize = () => {
-            mapAdjustion();
+            // mapAdjustion();
             if (window.innerWidth > 765) {
                 // disk top
                 if (!$mainHeader.hasClass('hidden')) {
