@@ -67,9 +67,11 @@
             $aside.addClass("active");
 
         };
-        mapAdjustion();
-
-        $('.nav-toggle').on('click', toggleSidNav)
-
+        // mapAdjustion();
+        $('.nav-toggle').on('click', toggleSidNav);
+        // resize on last img load
+        $("img").eq(-1).on("load", function () {
+            switchSize();
+        })
     })
 })(window, jQuery);
