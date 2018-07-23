@@ -357,7 +357,7 @@ body {
       z-index: 6;
       position: absolute;
       width: 150%;
-      top: -100%
+      top: calc(-80% - 1rem)
 
     }
     @media (max-width: 768px) {
@@ -409,7 +409,7 @@ body {
     p {
       &::before {
         content: "\f10d";
-        font-family: "FontAwesome" ;
+        font-family: "FontAwesome";
         color: $mainColor;
         display: block;
         margin-left: -2rem;
