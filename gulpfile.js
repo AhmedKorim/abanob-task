@@ -48,7 +48,13 @@ gulp.task('updatejs', () => {
 });
 gulp.task('img', () => {
     gulp.src('src/img/**/*.*')
-        .pipe(imagemin())
+        .pipe(imagemin({
+            interlaced: true,
+            progressive: true,
+            optimizationLevel: 5,
+            svgoPlugins: [{removeViewBox: true}]
+        }))
+
         .pipe(gulp.dest('dist/img'))
 });
 
