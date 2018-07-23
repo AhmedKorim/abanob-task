@@ -69,6 +69,13 @@
         };
         // mapAdjustion();
         $('.nav-toggle').on('click', toggleSidNav);
+        //scroll down
+        $('.scroll-down a').on('click', function (e) {
+            e.preventDefault();
+            $(".content").animate({
+                scrollTop: $(window).height()
+            }, 1000)
+        })
         // resize on last img load
         $("img").eq(-1).on("load", function () {
             switchSize();
