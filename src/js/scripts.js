@@ -17,7 +17,11 @@ const borderAdjust = () => {
     $(".skew-border-top").each((i, el) => {
             const distanse = $(el).parent().find('.img-fluid').height() / 4;
             const height = $(el).parentsUntil("section").eq(1).height() / 2 + sectionsPadding / 2;
-            $(el).height(height - distanse);
+            if (window.innerWidth > 765) {
+                $(el).height(height - distanse);
+            }else{
+                $(el).height(Math.max(height/2 - 2  *distanse , 30));
+            }
 
             $(el).siblings().filter(".skew-border-bottom").height(height - distanse);
         }
@@ -26,13 +30,18 @@ const borderAdjust = () => {
 borderAdjust();
 // the cultural
 const mapAdjustion = () => {
-    $culturalSecion.height($culturalSecion.outerHeight() + $(".cultural .map").height());
-    borderAdjust();
+    if (window.innerWidth > 765) {
+        $culturalSecion.height(200 + $(".cultural .map img").height());
+    }else {
+        $culturalSecion.height("auto");
 
+    }
+    borderAdjust();
 }
 mapAdjustion();
 const switchSize = () => {
-    if (window.innerWidth > 800) {
+    mapAdjustion();
+    if (window.innerWidth > 765) {
         // disk top
         if (!$mainHeader.hasClass('hidden')) {
             $mainHeader.addClass('hidden');

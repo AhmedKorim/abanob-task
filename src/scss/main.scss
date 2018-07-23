@@ -3,6 +3,7 @@
 ----------------------------------*/
 $mainColor: #7e1012;
 $darkColor: #4a4a4a;
+$grayColor: #969696;
 /*----------------------------------
   framework
 ----------------------------------*/
@@ -24,6 +25,18 @@ $darkColor: #4a4a4a;
     font-size: 1.1rem;
     h2 {
       text-transform: capitalize;
+    }
+  }
+  @media (max-height: 765px) {
+    display: block;
+    background-color: $grayColor;
+    border: none;
+    .label {
+      font-weight: 400;
+      font-size: 1rem;
+    }
+    h2 {
+      font-size: 1.5rem;
     }
   }
 }
@@ -61,26 +74,31 @@ section {
     content: '';
     display: block;
     width: 1px;
-    background-color: $mainColor;
+    background-color: transparentize($mainColor,.3);
     position: absolute;
-      height: 300px;
+    height: 300px;
     z-index: 5;
   }
   .skew-border-top {
     top: -48px;
+    @media (max-width: 768px) {
+      top: 5%;
+    }
   }
   .skew-border-bottom {
     bottom: -48px;
+    @media (max-width: 768px) {
+      display: none !important;
+    }
   }
   .skew-holder {
     position: absolute;
     width: 120%;
     left: -10%;
     z-index: 7;
-    @media (max-width: 768px){
-      width: 100%;
+    @media (max-width: 768px) {
+      width: 75%;
       left: unset;
-
       position: relative;
       display: flex;
       align-items: center;
@@ -287,7 +305,7 @@ body {
   }
   .map {
     position: relative;
-    top: -10rem;
+    //top: -10rem;
     > div {
       z-index: 6;
       position: absolute;
