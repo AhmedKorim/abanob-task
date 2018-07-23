@@ -59,6 +59,7 @@ section {
   .row {
     margin: 0;
      div[class^="col"]{
+       padding: 0;
       @media (max-width: 768px) {
         padding: 0;
       }

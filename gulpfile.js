@@ -4,7 +4,8 @@ const gulp = require('gulp'),
     babel = require('gulp-babel'),
     concat = require('gulp-concat'),
     sourcemaps = require('gulp-sourcemaps'),
-    autoprefixer = require('gulp-autoprefixer');
+    autoprefixer = require('gulp-autoprefixer'),
+ imagemin = require('gulp-imagemin');
 
 gulp.task('scripts', () => {
     gulp.src('src/js/scripts.js')
@@ -47,6 +48,7 @@ gulp.task('updatejs', () => {
 });
 gulp.task('img', () => {
     gulp.src('src/img/**/*.*')
+        .pipe(imagemin())
         .pipe(gulp.dest('dist/img'))
 });
 
