@@ -14,54 +14,66 @@ $grayColor: #f8f8f5;
 .img-fluid {
   width: 100%;
 }
+
 /*----------------------------------
   secionts heading
 ----------------------------------*/
 %heading {
-  display: inline-block;
   padding: 0 1rem;
   margin-bottom: 2rem;
-  position: relative;
   text-align: center;
-  &:after {
-    content: "";
-    display: block;
-    width: 120%;
-    position: absolute;
-    bottom: -10%;
-    left: 0;
-    height: 1px;
-    background-color: $mainColor;
-  }
-  &.center {
-    &:after {
-      left: -10%;
-    }
-  }
 
   .label {
     text-transform: uppercase;
     padding: 0;
-    margin: 0;
+    margin: auto;
     color: $mainColor;
     font-weight: 300;
     font-size: 1.1rem;
+    text-align: left;
+  }
+  h2 {
+    text-transform: capitalize;
+    position: relative;
+    text-align: center;
+    display: inline-block;
+    margin: auto;
+    &:after {
+      content: "";
+      display: block;
+      width: 120%;
+      position: absolute;
+      bottom: -30%;
+      left: -10%;
+      height: 1px;
+      background-color: $mainColor;
+    }
+    // makes after full width
+  }
+  &.fullWidthBorder {
     h2 {
-      text-transform: capitalize;
+      &:after {
+        width: 300%;
+      }
     }
   }
   @media (max-width: 765px) {
     text-align: left;
     padding: 0 3rem;
-    &:after {
-      display: none;
+    h2 {
+      &:after {
+        display: none !important;
+      }
     }
+
     display: block;
     background-color: $grayColor;
     border: none;
     .label {
       font-weight: 400;
       font-size: 1rem;
+      margin: 0;
+      text-align: left ;
     }
     h2 {
       font-size: 1.5rem;
@@ -69,6 +81,7 @@ $grayColor: #f8f8f5;
   }
 
 }
+
 /*----------------------------------
   paragtaphs
 ----------------------------------*/
@@ -76,6 +89,7 @@ $grayColor: #f8f8f5;
   font-size: 12.5px;
   margin-bottom: .5rem;
   padding-left: 1rem;
+  line-height: 1.3rem;
   padding-right: 1rem;
 }
 
@@ -315,6 +329,11 @@ section {
 ----------------------------------*/
 
 .the-foundation {
+  header {
+    .label {
+      text-align: center;
+    }
+  }
   p {
     color: $darkColor;
     font-size: .9rem;
@@ -409,6 +428,7 @@ section {
   }
   blockquote {
     margin-top: 2rem;
+    padding: 0 1.5rem;
     p {
       &::before {
         content: "\f10d";

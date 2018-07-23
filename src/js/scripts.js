@@ -10,6 +10,17 @@
         };
 
         headerDim();
+
+        // heading adjectment
+        function SectionHeading() {
+            $('.label').each((i, el) => {
+                const $el = $(el);
+                if (i !== 0)
+                    $el.width($el.siblings('h2').width());
+            })
+        }
+
+        SectionHeading();
         // adding skew img line
         $('.skew-holder').parent()
             .append(_ => $(`<div class="skew-border-top"></div><div class="skew-border-bottom"></div>`));
@@ -38,9 +49,10 @@
         //     }
         //     borderAdjust();
         // };
-
+        // called by window resize event
         const switchSize = () => {
             // mapAdjustion();
+            SectionHeading();
             if (window.innerWidth > 765) {
                 // disk top
                 if (!$mainHeader.hasClass('hidden')) {
@@ -48,7 +60,6 @@
                     $sidenav.removeClass("nano");
                     $(".brand-holder").append($(".brand-heading"));
                 }
-
             } else {
                 $mainHeader.removeClass("hidden");
                 $sidenav.addClass("nano");
@@ -56,8 +67,11 @@
 
             }
         };
+
         switchSize();
+
         $(window).on('resize', switchSize);
+
         const toggleSidNav = (e) => {
             e.preventDefault();
             if ($aside.hasClass("active")) {
@@ -75,7 +89,9 @@
             $(".content").animate({
                 scrollTop: $(window).height()
             }, 1000)
-        })
+        });
+
+
         // resize on last img load
         $("img").eq(-1).on("load", function () {
             switchSize();
