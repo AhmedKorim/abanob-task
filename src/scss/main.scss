@@ -34,7 +34,7 @@ $darkColor: #4a4a4a;
 
 .content {
   max-height: 100vh;
-  overflow: auto;
+  overflow-x: hidden;
 }
 
 section {
@@ -79,14 +79,67 @@ section {
   }
 }
 
+body {
+  //overflow: hidden;
+}
+
 /*----------------------------------
   header
 ----------------------------------*/
 .header {
-  aside {
-    height: 100vh;
+  .main-header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
     background-color: #fff;
-    z-index: 845;
+    z-index: 10;
+    .brand{
+      margin-left: 1rem;
+      padding: .3rem .2rem .2rem;
+    }
+    .button{
+      margin-left:auto;
+      display: flex;
+      align-items: center;
+      a{
+        display: block;
+        margin-right: 1rem;
+        padding: .3rem;
+        height: 2rem;
+        width: 2rem;
+        background-color: red;
+      }
+    }
+    &.hidden{
+      display: none;
+
+    }
+  }
+  .sidenav {
+    z-index: 9;
+    &.nano {
+      position: absolute;
+      left: -100%;
+      aside{
+        transform: translate3d(100%, 0, 0);
+        visibility: hidden;
+        &.active{
+          visibility: visible;
+          transform: translate3d(200%, 0, 0);
+
+        }
+      }
+    }
+  }
+  aside {
+    min-height: 100vh;
+    height: 100vh;
+    width: 100%;
+    overflow-y: auto;
+    background-color: #fff;
+    transition: all .5s ease-in-out;
     ul {
       li {
         margin: 1rem 0;
