@@ -95,6 +95,7 @@
         // resize on last img load
         $("img").eq(-1).on("load", function () {
             switchSize();
+            console.log('from load');
         })
     })
 })(window, jQuery);
