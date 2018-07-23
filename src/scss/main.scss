@@ -27,7 +27,7 @@ $grayColor: #969696;
       text-transform: capitalize;
     }
   }
-  @media (max-height: 765px) {
+  @media (max-width: 765px) {
     display: block;
     background-color: $grayColor;
     border: none;
@@ -39,6 +39,7 @@ $grayColor: #969696;
       font-size: 1.5rem;
     }
   }
+
 }
 
 %pt {
