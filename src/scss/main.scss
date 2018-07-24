@@ -35,7 +35,6 @@ $grayColor: #f8f8f5;
   h2 {
     text-transform: capitalize;
     position: relative;
-    min-width: 200px;
     text-align: center;
     display: inline-block;
     margin: auto;
@@ -62,7 +61,6 @@ $grayColor: #f8f8f5;
     text-align: left;
     padding: 0 3rem;
     h2 {
-      min-width: unset;
       &:after {
         display: none !important;
       }
@@ -411,6 +409,14 @@ section {
 }
 
 .legacy {
+  header{
+    h2{
+      &:after{
+        width: 250%;
+        left: -75%;
+      }
+    }
+  }
   .col-md-2 {
     @extend %skew-holder;
   }
