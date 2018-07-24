@@ -53,6 +53,7 @@
         // called by window resize event
         var switchSize = function switchSize() {
             // mapAdjustion();
+            headerDim();
             SectionHeading();
             if (window.innerWidth > 765) {
                 // disk top
